@@ -22,7 +22,7 @@ require 'vendor/autoload.php';
 
 function theme_js() {
     wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), null, true);
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), null, false);
     wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', '' );
      wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array( "jquery", "wp-util" ), '1.0', true );
 
