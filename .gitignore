@@ -3,4 +3,4 @@ $ cat .gitignore
 /node_modules
 
 # exclude built js
-/assets/js/*
+#/assets/js/*
