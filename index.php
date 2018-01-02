@@ -146,9 +146,7 @@ $wc_query = new WP_Query($params);
 </div> -->
 <div class="videoContainer video">
     <video autoplay="" loop>
-        <!--<source src="https://s3.amazonaws.com/activelab/files/trailer.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
 
-        <source src="https://s3.amazonaws.com/activelab/files/trailer.webm" type="video/webm; codecs=&quot;vp8, vorbis&quot;">
         <?php $upload_dir = wp_upload_dir(); ?>
 <?php// echo $upload_dir['baseurl']; ?>
         <source src="<?php echo $upload_dir['baseurl'] . 'closed-loop-1.mp4'; ?>" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
