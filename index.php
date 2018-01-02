@@ -149,7 +149,7 @@ $wc_query = new WP_Query($params);
 
         <?php $upload_dir = wp_upload_dir(); ?>
 <?php// echo $upload_dir['baseurl']; ?>
-        <source src="<?php echo $upload_dir['baseurl'] . 'closed-loop-1.mp4'; ?>" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+        <source src="<?php echo $upload_dir['baseurl'] . '/closed-loop-1.mp4'; ?>" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
         <!--
 
         <source src="echo-hereweare.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
