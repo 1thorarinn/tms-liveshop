@@ -148,7 +148,7 @@ $wc_query = new WP_Query($params);
         <!--<source src="https://s3.amazonaws.com/activelab/files/trailer.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
 
         <source src="https://s3.amazonaws.com/activelab/files/trailer.webm" type="video/webm; codecs=&quot;vp8, vorbis&quot;"> -->
-        <source src="https://s3.eu-central-1.amazonaws.com/kaans-stream-store-videos/closed-loop-1.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+        <source src="<?php echo get_template_directory_uri() . '/assets/videos/' . 'closed-loop-1.mp4'; ?>" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
         <!--
 
         <source src="echo-hereweare.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
