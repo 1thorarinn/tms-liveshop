@@ -22,7 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'store' ); ?>
-
+<h1>asdsadsadsa</h1>
+<h1>asdsadsadsa</h1>
+<h1>asdsadsadsa</h1>
 <?php
 
 $params = array(
