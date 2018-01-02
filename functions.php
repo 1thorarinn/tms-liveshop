@@ -115,6 +115,7 @@ function get_component($slug, array $params = array(), $output = true) {
 }
 
 
+/*
 add_action('init', 'handle_preflight');
 
 function handle_preflight() {
@@ -126,4 +127,35 @@ function handle_preflight() {
         status_header(200);
         exit();
     }
+} */
+
+
+
+// http://wp-liveshop.test/wp-json/restos/v2/all
+add_action( 'rest_api_init',  'register_endpoints' );
+
+function register_endpoints() {
+    register_rest_route( 'liveshop/v2', '/questions', array(
+        'methods' => 'GET',
+        'callback' => 'get_all'
+        //    'permission_callback' => function () { return current_user_can( 'edit_others_posts' );}
+    ) );
+
+}
+
+
+
+function get_all($data){
+    $form_id = RGFormsModel::get_form_id('Spurning');
+
+    //$form_id = 1;
+
+
+
+    $entries  = GFAPI::get_entries( $form_id );
+
+
+    // \tms_log("TEST");
+    //return array('test' => dafad); //
+    return new WP_REST_Response($entries, 200);
 }
