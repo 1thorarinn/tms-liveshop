@@ -1,6 +1,15 @@
 <?php
 
+// https://www.kaansstreamstore.nl/en
+// ar stuff
+// // https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf
 
+// ck_b5610e27512d8e0fc8adb9eb408fb94f13aa7d7f
+// cs_7548b1bd67b5679bfa4e340ccd0e51baf8124fcc
+// http://10.41.114.29:3000/
+
+
+// react https://snipcart.com/blog/reactjs-wordpress-rest-api-example
 
 // If this file is called directly, fuck off.
 if ( ! defined( 'WPINC' ) ) {

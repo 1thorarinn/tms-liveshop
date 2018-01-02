@@ -126,13 +126,15 @@ $wc_query = new WP_Query($params);
 
             <?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
-            <p class="woocommerce-mini-cart__buttons buttons"><?php do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></p>
-
+            <!-- <p class="woocommerce-mini-cart__buttons buttons"><?php // do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></p> -->
+            <a class="cheese-icon" data-modal="#modal-window-checkout">Checkout</a>
         <?php else : ?>
 
             <p class="woocommerce-mini-cart__empty-message"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></p>
 
         <?php endif; ?>
+
+
     </div>
 </div>
 
@@ -142,7 +144,7 @@ $wc_query = new WP_Query($params);
     <div class="cart_totals <?php //echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
     </div>
 </div> -->
-<div class="videoContainer">
+<div class="videoContainer video">
     <video autoplay="" loop>
         <!--<source src="https://s3.amazonaws.com/activelab/files/trailer.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
 
@@ -155,15 +157,32 @@ $wc_query = new WP_Query($params);
         Video not supported.
     </video>
 </div>
+<!--
+#vid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
 
-
+<video id="vid" video autobuffer autoplay>
+    <source id="mp4" src="https://s3.eu-central-1.amazonaws.com/kaans-stream-store-videos/closed-loop-1.mp4" type="video/mp4">
+</video>-->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 -->
 
+<div id="modal-window-checkout" class="modal modal-side">
 
+    <?php echo do_shortcode('[woocommerce_checkout] '); ?>
 
-
-
+</div>
 
 
 <?php get_footer( 'store' ); ?>
