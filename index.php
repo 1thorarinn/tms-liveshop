@@ -127,12 +127,13 @@ $wc_query = new WP_Query($params);
 
             <!-- <p class="woocommerce-mini-cart__buttons buttons"><?php // do_action( 'woocommerce_widget_shopping_cart_buttons' ); ?></p> -->
             <a class="cheese-icon" data-modal="#modal-window-checkout">Checkout</a>
+            <br>
         <?php else : ?>
 
             <p class="woocommerce-mini-cart__empty-message"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></p>
 
         <?php endif; ?>
-
+        <br><a class="cheese-icon" data-modal="#modal-window-questions">Questions</a>
 
     </div>
 </div>
@@ -182,6 +183,22 @@ $wc_query = new WP_Query($params);
     <?php echo do_shortcode('[woocommerce_checkout] '); ?>
 
 </div>
+
+<div id="modal-window-questions" class="modal modal-questions">
+<?php
+//if ( is_page( 'submit-post' ) ) {
+    //only show to logged in users who can edit posts
+//gravity_form( $id_or_title, $display_title = true, $display_description = true, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true );
+
+if(function_exists('gravity_form')){
+    gravity_form('Spurning', false, false, false, null, true, 0, true);
+}
+
+
+//}
+?>
+</div>
+
 
 
 <?php get_footer( 'store' ); ?>

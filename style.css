@@ -223,6 +223,16 @@ h1
     background-color: hsla(0,0%,94%,.86);
 }
 
+
+.modal-questions{
+    position: absolute;
+    top: 90px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;

@@ -25,6 +25,19 @@ function theme_js() {
     wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), null, true);
     wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', '' );
      wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array( "jquery", "wp-util" ), '1.0', true );
+
+
+    //localize data for script
+    wp_localize_script( 'custom', 'POST_SUBMITTER', array(
+            'root' => esc_url_raw( rest_url() ),
+            'nonce' => wp_create_nonce( 'wp_rest' ),
+            'success' => __( 'Thanks for your submission!', 'your-text-domain' ),
+            'failure' => __( 'Your submission could not be processed.', 'your-text-domain' ),
+            'current_user_id' => get_current_user_id()
+        )
+    );
+
+
 }
 
 add_action('wp_enqueue_scripts', 'theme_js');
@@ -99,4 +112,18 @@ function get_component($slug, array $params = array(), $output = true) {
     extract($params, EXTR_SKIP);
     require($template_file);
     if(!$output) return ob_get_clean();
+}
+
+
+add_action('init', 'handle_preflight');
+
+function handle_preflight() {
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
+    header("Access-Control-Allow-Headers: Origin, Content-Type, Accept");
+
+    if('OPTIONS' == $_SERVER['REQUEST_METHOD']) {
+        status_header(200);
+        exit();
+    }
 }

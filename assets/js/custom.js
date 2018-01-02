@@ -44,4 +44,18 @@ $(document).ready(function(){
 
     });
 
+
+
+
+
+
+
+
+    // https://apppresser.com/wp-api-post-submission/
+    // https://stackoverflow.com/questions/32741869/getting-gravity-forms-ajax-confirmation-message-in-javascript-instead-of-outputt
+
+
+
+
+
 });
