@@ -22,9 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'store' ); ?>
-<h1>asdsadsadsa</h1>
-<h1>asdsadsadsa</h1>
-<h1>asdsadsadsa</h1>
+
 <?php
 
 $params = array(
@@ -32,7 +30,6 @@ $params = array(
     'post_type' => 'product'
 );
 
-$wc_query = new WP_Query($params);
 $wc_query = new WP_Query($params);
 ?>
 <?php if ( $wc_query->have_posts() ) : ?>
